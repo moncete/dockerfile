@@ -14,7 +14,7 @@ job create:
 job test:
   stage: test
   script:
-    - docker docker run centos/ansible ansible --vesion
+    - docker run --name test centos/ansible ansible --vesion
 
 job tagged:
   stage: tag_image
