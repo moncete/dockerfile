@@ -1,21 +1,27 @@
 stages:
   - create_image
+  - test
   - tag_image
   - registry_image
 before_script:
   - docker info
 
-job 1:
+job create:
   stage: create_image
   script:
     - docker build -t centos/ansible .
 
-job 2:
+job test:
+  stage: test
+  script:
+    - docker docker run centos/ansible ansible --version
+
+job tagged:
   stage: tag_image
   script:
     - docker tag centos/ansible localhost:5000/ansible:v1
 
-job 3:
+job registry:
   stage: registry_image
   script:
     - docker push localhost:5000/ansible:v1
