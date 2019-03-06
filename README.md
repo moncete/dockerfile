@@ -4,6 +4,5 @@ Dockerfile img centos
 
 
 # Creación Docker Registry:
-  docker run -d -p 5000:5000 --restart=always --name registry-v /registry:/var/lib/registry registry:2
-
-
+  docker volume create 
+  docker run -d -p 4000:4000 --restart=always --name registry -v /registry:/var/lib/registry registry:2
