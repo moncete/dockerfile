@@ -1,8 +1,8 @@
 FROM centos
 
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum -y update && yum -y install java-1.8.0-openjdk  python2-pip openjdk-11-jdk openssh-server git \
-    && pip install ansible \
-    && pip install hvac junit-xml\
+    && pip install --upgrade ansible \
+    && pip install --upgrade hvac junit-xml\
     && yum clean all
 RUN mkdir /var/run/sshd
 RUN mkdir /etc/ansible
