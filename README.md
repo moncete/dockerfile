@@ -1,5 +1,5 @@
 # Estado Ejecucion
-[![pipeline status](http://integra.mon.es/dockerfile/centos/badges/master/pipeline.svg)][![pipeline status](http://integra.mon.es/dockerfile/centos/badges/master/pipeline.svg)]
+![pipeline status](http://integra.mon.es/dockerfile/centos/badges/master/pipeline.svg)
 
 # centos
 
