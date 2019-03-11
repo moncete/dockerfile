@@ -29,5 +29,5 @@ job registry:
 
 
 except:
-    changes:
+  changes:
     - README.md
