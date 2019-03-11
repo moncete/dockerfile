@@ -30,4 +30,3 @@ job registry:
   script:
     - docker push localhost:5000/ansible
 
-
