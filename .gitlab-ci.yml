@@ -11,31 +11,19 @@ job create:
   stage: create_image
   script:
     - docker build -t centos/ansible .
-  except:
-    changes:
-    - README.md
-
+ 
 job test:
   stage: test
   script:
     - docker run centos/ansible ansible --version
-  except:
-    changes:
-      - README.md
-
+ 
 job tagged:
   stage: tag_image
   script:
     - docker tag centos/ansible localhost:5000/ansible
-  except:
-    changes:
-      - README.md
-
+ 
 job registry:
   stage: registry_image
   script:
     - docker push localhost:5000/ansible
-  except:
-    changes:
-      - README.md
-
+ 
