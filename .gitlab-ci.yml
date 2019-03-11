@@ -3,7 +3,10 @@ stages:
   - test
   - tag_image
   - registry_image
-   
+except:
+  changes:
+    - README.md
+
 before_script:
   - docker info
 
@@ -28,6 +31,3 @@ job registry:
     - docker push localhost:5000/ansible
 
 
-except:
-  changes:
-    - README.md
